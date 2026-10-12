@@ -1,0 +1,20 @@
+# Local credentials are supplied through environment variables.
+.env
+.env.*
+/app/config/database.local.php
+
+# Runtime output
+/storage/logs/*
+!/storage/logs/.gitkeep
+*.log
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local test and editor output
+/.phpunit.cache/
+/.phpunit.result.cache
+
