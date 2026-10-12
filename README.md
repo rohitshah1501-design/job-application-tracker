@@ -12,6 +12,90 @@ A private, responsive job-search tracker built with HTML, CSS, vanilla JavaScrip
 - Follow-up groups for overdue, due today, and upcoming dates
 - Responsive layout with keyboard focus styles and accessible form labels
 
+## 📁 Project Structure
+
+```text
+job-application-tracker/
+│
+├── app/                              # Core application logic
+│   ├── bootstrap.php                 # Loads application dependencies
+│   ├── config/
+│   │   └── database.php               # Database configuration
+│   ├── controllers/
+│   │   ├── AuthController.php         # Registration and login logic
+│   │   ├── JobApplicationController.php # Application validation and logic
+│   │   └── InterviewController.php    # Interview-related logic
+│   ├── middleware/
+│   │   └── session.php                # Session, CSRF and auth helpers
+│   ├── models/
+│   │   ├── Database.php               # PDO database connection
+│   │   ├── JobApplication.php         # Job application database operations
+│   │   └── Interview.php               # Interview database operations
+│   └── views/
+│       ├── applications/
+│       │   └── form.php                # Add/edit application form
+│       ├── interviews/
+│       │   └── form.php                # Add/edit interview form
+│       └── partials/
+│           ├── header.php              # Shared page header and navigation
+│           └── footer.php              # Shared page footer
+│
+├── database/
+│   └── migrations/
+│       └── 001_create_core_tables.sql  # Database table definitions
+│
+├── public/                             # Web-accessible application files
+│   ├── assets/
+│   │   ├── css/
+│   │   │   └── auth.css                # Application styling and responsive UI
+│   │   ├── images/                     # Image assets
+│   │   └── js/                         # JavaScript assets
+│   ├── index.php                       # Application entry point
+│   ├── register.php                    # User registration page
+│   ├── login.php                       # User login page
+│   ├── logout.php                      # User logout handler
+│   ├── account.php                     # Protected account page
+│   ├── dashboard.php                   # Main application dashboard
+│   ├── application-create.php           # Create an application
+│   ├── application-view.php             # View application details
+│   ├── application-edit.php             # Edit an application
+│   ├── application-delete.php           # Confirm and delete an application
+│   ├── interviews.php                   # List upcoming and past interviews
+│   ├── interview-create.php              # Schedule an interview
+│   ├── interview-view.php                # View interview details
+│   ├── interview-edit.php                # Edit an interview
+│   └── interview-delete.php              # Confirm and delete an interview
+│
+├── storage/
+│   └── logs/                            # Runtime logs
+│
+├── tests/
+│   └── database_connection.php           # Database connection test
+│
+├── .gitignore                            # Excludes local and sensitive files
+└── README.md                             # Project documentation
+```
+
+### 📌 Directory Overview
+
+| Directory | Purpose |
+|---|---|
+| `app/` | Application configuration, business logic, models, middleware and views |
+| `database/` | SQL migrations used to create the database schema |
+| `public/` | Entry point and pages accessible through the web server |
+| `public/assets/` | CSS, JavaScript and image resources |
+| `storage/` | Runtime log storage |
+| `tests/` | Database connectivity checks |
+
+### 🛠️ Main Technologies
+
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** PHP 8.2
+- **Database:** MariaDB
+- **Database access:** PDO with prepared statements
+- **Development environment:** XAMPP
+- **Version control:** Git and GitHub
+
 ## Requirements
 
 - Windows with XAMPP and PHP 8.2
